@@ -45,19 +45,23 @@ const RestaurantsContainer = styled.div`
 
 
 function App() {
-
-  const [isLoading, setLoading] = useState<Boolean>(true);
+  // useState declaration
+    // Fetching Data
+  const [isLoading, setLoading] = useState<Boolean>(true);  
   const [restaurantsList, setResturants] = useState<Array<Restaurant>>([]);
+    // onClick whenever someone selects a restaurant
   const [selectedRestaurant, selectResturaunt] = useState<number>(-1)
   const [isOpen, setIsOpen] = useState(false);
   const [viewport, setViewport] = useState<ViewPort>({
     latitude: 50.3,
     longitude: 23.2,
+    // Checks to see how big device to set mapsize, need to be made dynamic
     width: window.innerWidth>768 ? "100%" :"45vw",
     height: window.innerWidth>768 ? "100%" :"35vh",
     zoom: 15,
   })
 
+  // Fetches the data from the API endpoint
   const fetchData = async () =>{
     const response = await fetch('https://s3.amazonaws.com/br-codingexams/restaurants.json')
     const data  = await response.json()
@@ -69,6 +73,7 @@ function App() {
     fetchData()
   },[])
 
+  // Conditional Rendering to make sure the data has been fetched
   if(isLoading){
     return(
       <h1>Loading...</h1>

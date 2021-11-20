@@ -42,7 +42,7 @@ const DescriptionText = styled.p`
     } 
     color: #2A2A2A;
 `
-
+// Edits the height and width of the drawer animation to not take up the entire vh or vw
 const useStyles = makeStyles(() => ({
     drawerPaper: {
         position: 'relative',
@@ -71,7 +71,9 @@ const Drawer = ({isOpen, setOpen, restauraunt: restaurant, viewport, setViewport
                   }}
             >
                 <DetailView>
+                    {/* MapBox Implementation */}
                     <ReactMapGL {...viewport} 
+                    // Attribute for API Token
                     mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                     onViewportChange={(viewport: React.SetStateAction<Viewport>) => {setViewport(viewport)}}
                     mapStyle="mapbox://styles/mapbox/streets-v11">
