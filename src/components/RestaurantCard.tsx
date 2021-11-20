@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Restaurant } from '../App'
-import WebFont from 'webfontloader';
+import { Restaurant, ViewPort as Viewport } from './ComponentTypes';
 
-
-export const Card = styled.div`
-   
+const Card = styled.div`
     position: relative;
+
     width: 100%;
     height: 240px;
 
@@ -15,10 +12,12 @@ export const Card = styled.div`
     font-family: 'Montserrat', sans-serif;
 
     /* Test Border */
-    border: 5px solid black;
+    border: 3px solid black;
 `
+
 const Photo = styled.div<{bg: string}>`
     position: relative;
+
     height: 100%;  
     width: 100%;
 
@@ -27,21 +26,19 @@ const Photo = styled.div<{bg: string}>`
     background-position: center;
     background-size: cover;
     
-    border: 0.25rem solid green;
-    border-radius: var(--radius);
+    /* border: 0.25rem solid green; */
 `
+
 export const RestaurantInfo = styled.div`
     position: absolute;
     bottom: 0px;
+
     margin-left: 12px;
     margin-bottom: 12px;
 
-    border: 3px solid black;
-
     font-family: 'Montserrat', sans-serif;
+    /* border: 3px solid black; */
 `
-
-
 
 export const Name = styled.h1`
     position: relative;
@@ -49,22 +46,21 @@ export const Name = styled.h1`
     padding: 0;
 
     font-size: 18px;
+    @media (max-width: 768px) {
+        font-size: 12px;
+        padding-bottom: 8px;
+    } 
 `
 
 export const Type = styled.p`
     height: 0px;
     font-size: 16px;
+    @media (max-width: 768px) {
+        font-size: 12px;
+    } 
 `
-const DrawerDiv = styled.div`
-    position: relative;
-    left: 30px;
-`
-
 
 export const RestaurantCard = ({Restaurant, onClick} : {Restaurant: Restaurant, onClick: any}) => {
-
-
-
     const {name, category, backgroundImageURL} = Restaurant
     return (
         <>

@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^4.12.3",
+    "@mui/icons-material": "^5.1.1",
     "@mui/material": "^5.1.1",
     "@mui/styled-engine-sc": "^5.1.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -18,6 +21,7 @@
     "@types/styled-components": "^5.1.15",
     "@types/webfontloader": "^1.6.33",
     "baseui": "^10.6.0",
+    "material-ui-icons": "^1.0.0-beta.36",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-map-gl": "^6.1.17",
